@@ -49,7 +49,7 @@ public class MeetupAdapter extends RecyclerView.Adapter<MeetupAdapter.MeetupView
     }
 
 
-    public class MeetupViewHolder extends RecyclerView.ViewHolder {
+    class MeetupViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.name_event_textview)
         TextView nameTextView;
         @BindView(R.id.event_imageview)
@@ -58,7 +58,7 @@ public class MeetupAdapter extends RecyclerView.Adapter<MeetupAdapter.MeetupView
         TextView dateTextView;
 
 
-        public MeetupViewHolder(View itemView) {
+        MeetupViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
 

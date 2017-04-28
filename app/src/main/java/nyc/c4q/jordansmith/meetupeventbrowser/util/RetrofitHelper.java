@@ -10,6 +10,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitHelper {
     private static Retrofit.Builder Instance;
 
+    private static Retrofit.Builder getInstance() {
+        if (Instance == null) {
+            Instance = new Retrofit.Builder();
+        }
+        return Instance;
+    }
+
     public static <T> T getMeetupResponse(String baseUrl, Class<T> service) {
         Retrofit retrofit = getInstance()
                 .baseUrl(baseUrl)
@@ -17,11 +24,5 @@ public class RetrofitHelper {
                 .build();
         return retrofit.create(service);
     }
-
-    private static Retrofit.Builder getInstance() {
-        if (Instance == null) {
-            Instance = new Retrofit.Builder();
-        }
-        return Instance;
-    }
+    
 }
