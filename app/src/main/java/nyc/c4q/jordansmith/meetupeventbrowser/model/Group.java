@@ -1,19 +1,48 @@
 package nyc.c4q.jordansmith.meetupeventbrowser.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import org.parceler.Parcel;
+
 /**
  * Created by jordansmith on 4/26/17.
  */
-
+@Parcel
 public class Group {
-    private String joinMode;
-    private Long created;
-    private String name;
-    private Float groupLon;
-    private Long id;
-    private String urlname;
-    private GroupPhoto groupPhoto;
-    private Float groupLat;
-    private String who;
+
+
+    @SerializedName("join_mode")
+    @Expose
+    public String joinMode;
+    @SerializedName("created")
+    @Expose
+    public Long created;
+    @SerializedName("name")
+    @Expose
+    public String name;
+    @SerializedName("group_lon")
+    @Expose
+    public Float groupLon;
+    @SerializedName("id")
+    @Expose
+    public Long id;
+    @SerializedName("urlname")
+    @Expose
+    public String urlname;
+    @SerializedName("group_photo")
+    @Expose
+    public GroupPhoto groupPhoto;
+    @SerializedName("group_lat")
+    @Expose
+    public Float groupLat;
+    @SerializedName("who")
+    @Expose
+    public String who;
+
+    public Group() {
+
+    }
 
     public String getJoinMode() {
         return joinMode;

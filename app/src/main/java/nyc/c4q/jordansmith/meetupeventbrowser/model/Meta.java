@@ -1,23 +1,29 @@
 package nyc.c4q.jordansmith.meetupeventbrowser.model;
 
+import org.parceler.Parcel;
+
 /**
  * Created by jordansmith on 4/26/17.
  */
-
+@Parcel
 public class Meta {
-    private String next;
-    private String method;
-    private Integer totalCount;
-    private String link;
-    private Integer count;
-    private String description;
-    private String lon;
-    private String title;
-    private String url;
-    private String signedUrl;
-    private String id;
-    private Long updated;
-    private String lat;
+    public String next;
+    public String method;
+    public Integer totalCount;
+    public String link;
+    public Integer count;
+    public String description;
+    public String lon;
+    public String title;
+    public String url;
+    public String signedUrl;
+    public String id;
+    public Long updated;
+    public String lat;
+
+    public Meta(){
+
+    }
 
     public String getNext() {
         return next;

@@ -1,16 +1,38 @@
 package nyc.c4q.jordansmith.meetupeventbrowser.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import org.parceler.Parcel;
+
 /**
  * Created by jordansmith on 4/26/17.
  */
-
+@Parcel
 public class GroupPhoto {
-    private String highresLink;
-    private Long photoId;
-    private String baseUrl;
-    private String type;
-    private String photoLink;
-    private String thumbLink;
+
+    @SerializedName("highres_link")
+    @Expose
+    public String highresLink;
+    @SerializedName("photo_id")
+    @Expose
+    public Long photoId;
+    @SerializedName("base_url")
+    @Expose
+    public String baseUrl;
+    @SerializedName("type")
+    @Expose
+    public String type;
+    @SerializedName("photo_link")
+    @Expose
+    public String photoLink;
+    @SerializedName("thumb_link")
+    @Expose
+    public String thumbLink;
+
+    public GroupPhoto(){
+
+    }
 
     public String getHighresLink() {
         return highresLink;

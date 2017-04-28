@@ -1,29 +1,38 @@
 package nyc.c4q.jordansmith.meetupeventbrowser.model;
 
+import org.parceler.Parcel;
+
 /**
  * Created by jordansmith on 4/26/17.
  */
 
+@Parcel
 public class Result {
-    private Long utcOffset;
-    private Long rsvpLimit;
-    private Long headcount;
-    private Float distance;
-    private String visibility;
-    private Long waitlistCount;
-    private Long created;
-    private Fee fee;
-    private Long maybeRsvpCount;
-    private String description;
-    private String eventUrl;
-    private Long yesRsvpCount;
-    private Long duration;
-    private String name;
-    private String id;
-    private Long time;
-    private Long updated;
-    private Group group;
-    private String status;
+    public Venue venue;
+    public Long utcOffset;
+    public Long rsvpLimit;
+    public Long headcount;
+    public Float distance;
+    public String visibility;
+    public Long waitlistCount;
+    public Long created;
+    public Fee fee;
+    public Long maybeRsvpCount;
+    public String description;
+    public String eventUrl;
+    public Long yesRsvpCount;
+    public Long duration;
+    public String name;
+    public String id;
+    public Long time;
+    public Long updated;
+    public Group group;
+    public String status;
+
+    public Result(){
+
+    }
+
 
     public Long getUtcOffset() {
         return utcOffset;
@@ -175,5 +184,13 @@ public class Result {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Venue getVenue() {
+        return venue;
+    }
+
+    public void setVenue(Venue venue) {
+        this.venue = venue;
     }
 }

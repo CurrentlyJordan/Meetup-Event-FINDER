@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +18,7 @@ import nyc.c4q.jordansmith.meetupeventbrowser.meetupList.MeetupListActivity;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View{
     @BindView(R.id.zipcode_edit_text) EditText zipCodeEditText;
-    @BindView(R.id.use_location_button) Button useLocationButton;
+    @BindView(R.id.search_button) Button searchButton;
     private MainPresenter mainPresenter;
     private static final String LOCATION_ZIP_CODE_KEY= "zipCode";
 
@@ -37,6 +38,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                     return true;
                 }
                 return false;
+            }
+        });
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onZipCodeEntered();
             }
         });
 

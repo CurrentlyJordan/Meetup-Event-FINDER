@@ -1,16 +1,22 @@
 package nyc.c4q.jordansmith.meetupeventbrowser.model;
 
+import org.parceler.Parcel;
+
 /**
  * Created by jordansmith on 4/26/17.
  */
-
+@Parcel
 public class Fee {
-    private Integer amount;
-    private String accepts;
-    private String description;
-    private String currency;
-    private String label;
-    private String required;
+    public Integer amount;
+    public String accepts;
+    public String description;
+    public String currency;
+    public String label;
+    public String required;
+
+    public Fee(){
+
+    }
 
     public Integer getAmount() {
         return amount;

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Meetup Event Browser</string>
+    <string name="network_connection_message">Check you network connection and try again</string>
+    <string name="error_finding_meetups_message">Error Finding Meetups</string>
 </resources>
