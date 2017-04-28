@@ -30,7 +30,7 @@ public class GroupPhoto {
     @Expose
     public String thumbLink;
 
-    public GroupPhoto(){
+    public GroupPhoto() {
 
     }
 

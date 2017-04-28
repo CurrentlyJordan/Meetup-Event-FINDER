@@ -12,7 +12,7 @@ public class MeetupResponse {
     public List<Result> results;
     public Meta meta;
 
-    public MeetupResponse(){
+    public MeetupResponse() {
 
     }
 

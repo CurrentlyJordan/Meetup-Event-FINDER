@@ -25,20 +25,18 @@ public class DetailPresenter extends BasePresenter<DetailContract.View> implemen
 
     @Override
     public void evaluateVenueInfo() {
-        if(ResultHelper.checkVenueData(result)){
+        if (ResultHelper.checkVenueData(result)) {
             view.showVenueInfo();
-        }
-        else{
+        } else {
             view.hideVenueInfo();
         }
     }
 
     @Override
     public void evaluateGroupPhoto() {
-        if(ResultHelper.checkPhotoData(result)){
+        if (ResultHelper.checkPhotoData(result)) {
             view.showGroupPhoto();
-        }
-        else{
+        } else {
             view.hideGroupPhoto();
         }
 

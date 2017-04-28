@@ -45,7 +45,7 @@ public class Venue {
     @Expose
     public String state;
 
-    public Venue(){
+    public Venue() {
 
     }
 

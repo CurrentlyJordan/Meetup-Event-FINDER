@@ -29,7 +29,7 @@ public class Result {
     public Group group;
     public String status;
 
-    public Result(){
+    public Result() {
 
     }
 

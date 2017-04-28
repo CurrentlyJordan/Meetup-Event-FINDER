@@ -27,13 +27,13 @@ public class MeetupAdapter extends RecyclerView.Adapter<MeetupAdapter.MeetupView
     MeetupListPresenter presenter;
     private static final String RESULT_CODE_KEY = "Result";
 
-    MeetupAdapter(MeetupListPresenter presenter){
+    MeetupAdapter(MeetupListPresenter presenter) {
         this.presenter = presenter;
     }
 
     @Override
     public MeetupViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View childView = LayoutInflater.from(parent.getContext()).inflate(R.layout.meetup_item_view,parent, false);
+        View childView = LayoutInflater.from(parent.getContext()).inflate(R.layout.meetup_item_view, parent, false);
         return new MeetupViewHolder(childView);
     }
 
@@ -47,7 +47,6 @@ public class MeetupAdapter extends RecyclerView.Adapter<MeetupAdapter.MeetupView
     public int getItemCount() {
         return presenter.getResultList().size();
     }
-
 
 
     public class MeetupViewHolder extends RecyclerView.ViewHolder {
@@ -65,24 +64,22 @@ public class MeetupAdapter extends RecyclerView.Adapter<MeetupAdapter.MeetupView
 
         }
 
-        void bind(final Result result){
+        void bind(final Result result) {
             nameTextView.setText(result.getName());
-            if(presenter.checkPhotoData(result)) {
+            if (presenter.checkPhotoData(result)) {
                 Glide.with(itemView.getContext()).load(result.getGroup()
                         .getGroupPhoto()
                         .getPhotoLink())
                         .into(groupImageView);
-            }
-            else{
+            } else {
                 Glide.with(itemView.getContext()).load(R.drawable.no_image_available)
                         .into(groupImageView);
 
             }
-            if(presenter.checkVenueData(result)){
+            if (presenter.checkVenueData(result)) {
                 String venueInfo = presenter.formatVenueInfo(result.getVenue());
                 dateTextView.setText(venueInfo);
-            }
-            else{
+            } else {
                 dateTextView.setText("No venue information available");
             }
 

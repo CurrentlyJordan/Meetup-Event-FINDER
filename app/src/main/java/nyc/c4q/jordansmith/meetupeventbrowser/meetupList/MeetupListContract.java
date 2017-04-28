@@ -25,8 +25,6 @@ public interface MeetupListContract {
         void showErrorMeetupPage();
 
 
-
-
     }
 
     interface Presenter {

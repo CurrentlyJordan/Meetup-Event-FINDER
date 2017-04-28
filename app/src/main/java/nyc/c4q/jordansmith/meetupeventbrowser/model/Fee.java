@@ -14,7 +14,7 @@ public class Fee {
     public String label;
     public String required;
 
-    public Fee(){
+    public Fee() {
 
     }
 

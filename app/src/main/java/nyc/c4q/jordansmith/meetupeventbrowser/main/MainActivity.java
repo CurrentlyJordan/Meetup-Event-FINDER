@@ -16,11 +16,13 @@ import butterknife.ButterKnife;
 import nyc.c4q.jordansmith.meetupeventbrowser.R;
 import nyc.c4q.jordansmith.meetupeventbrowser.meetupList.MeetupListActivity;
 
-public class MainActivity extends AppCompatActivity implements MainContract.View{
-    @BindView(R.id.zipcode_edit_text) EditText zipCodeEditText;
-    @BindView(R.id.search_button) Button searchButton;
+public class MainActivity extends AppCompatActivity implements MainContract.View {
+    @BindView(R.id.zipcode_edit_text)
+    EditText zipCodeEditText;
+    @BindView(R.id.search_button)
+    Button searchButton;
     private MainPresenter mainPresenter;
-    private static final String LOCATION_ZIP_CODE_KEY= "zipCode";
+    private static final String LOCATION_ZIP_CODE_KEY = "zipCode";
 
 
     @Override
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void showLengthErrorMessage() {
-        Toast.makeText(this,"Zip code needs to be 5 digits", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Zip code needs to be 5 digits", Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -49,7 +49,6 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
     }
 
 
-
     @Override
     public void showGroupPhoto() {
         Glide.with(this).load(result.getGroup()
@@ -68,7 +67,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
     @Override
     public void setNameAndDescription() {
         detailNameTextView.setText(result.getName());
-        detailWebView.loadData(result.getDescription(),"text/html", null);
+        detailWebView.loadData(result.getDescription(), "text/html", null);
     }
 
     @Override

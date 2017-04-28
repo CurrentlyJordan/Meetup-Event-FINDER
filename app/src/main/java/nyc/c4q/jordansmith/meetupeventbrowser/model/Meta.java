@@ -21,7 +21,7 @@ public class Meta {
     public Long updated;
     public String lat;
 
-    public Meta(){
+    public Meta() {
 
     }
 

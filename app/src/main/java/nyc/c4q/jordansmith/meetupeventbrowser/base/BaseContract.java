@@ -6,7 +6,7 @@ package nyc.c4q.jordansmith.meetupeventbrowser.base;
 
 public class BaseContract {
 
-    public interface Presenter<T>{
+    public interface Presenter<T> {
         void attach(T view);
 
         void detach();

@@ -85,14 +85,13 @@ public class MeetupListActivity extends AppCompatActivity implements MeetupListC
         errorMeetupsLinearLayout.setVisibility(View.VISIBLE);
     }
 
-    void checkSaveInstanceState(Bundle savedInstanceState){
+    void checkSaveInstanceState(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             meetupListPresenter.fetchMeetupData(userZipCode);
         } else {
-            if(savedInstanceState.getParcelableArray(PARCELABLE_LIST_KEY) == null){
+            if (savedInstanceState.getParcelableArray(PARCELABLE_LIST_KEY) == null) {
                 meetupListPresenter.fetchMeetupData(userZipCode);
-            }
-            else{
+            } else {
                 showProgressBar(false);
                 ArrayList<Parcelable> parcelables = savedInstanceState.getParcelableArrayList(PARCELABLE_LIST_KEY);
                 meetupListPresenter.convertParcelableToResults(parcelables);
@@ -103,10 +102,9 @@ public class MeetupListActivity extends AppCompatActivity implements MeetupListC
     }
 
 
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        if(meetupListPresenter.checkResults()){
+        if (meetupListPresenter.checkResults()) {
             outState.putParcelableArrayList(PARCELABLE_LIST_KEY, meetupListPresenter.convertResultsToParcelable());
         }
         super.onSaveInstanceState(outState);

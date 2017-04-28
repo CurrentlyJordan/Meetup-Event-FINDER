@@ -9,6 +9,7 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 import java.util.List;
 
+import nyc.c4q.jordansmith.meetupeventbrowser.BuildConfig;
 import nyc.c4q.jordansmith.meetupeventbrowser.base.BasePresenter;
 import nyc.c4q.jordansmith.meetupeventbrowser.model.MeetupResponse;
 import nyc.c4q.jordansmith.meetupeventbrowser.model.Result;
@@ -25,7 +26,7 @@ import retrofit2.Response;
 public class MeetupListPresenter extends BasePresenter<MeetupListContract.View> implements MeetupListContract.Presenter {
 
     private final static String BASE_URL = "https://api.meetup.com";
-    private final static String API_KEY = "2e1a5520269b50d3513925276236";
+    private static final String API_KEY = BuildConfig.API_KEY;
     List<Result> resultList;
 
     public MeetupListPresenter(MeetupListContract.View view) {
@@ -104,19 +105,19 @@ public class MeetupListPresenter extends BasePresenter<MeetupListContract.View> 
 
     @Override
     public ArrayList<Parcelable> convertResultsToParcelable() {
-            ArrayList<Parcelable> parcelableResults = new ArrayList<>();
-            for (Result result: resultList) {
-                Parcelable parcelable = Parcels.wrap(result);
-                parcelableResults.add(parcelable);
-            }
-            return parcelableResults;
+        ArrayList<Parcelable> parcelableResults = new ArrayList<>();
+        for (Result result : resultList) {
+            Parcelable parcelable = Parcels.wrap(result);
+            parcelableResults.add(parcelable);
+        }
+        return parcelableResults;
 
     }
 
     @Override
     public void convertParcelableToResults(ArrayList<Parcelable> parcelables) {
         List<Result> resultList = new ArrayList<>();
-        for (Parcelable parcelable: parcelables) {
+        for (Parcelable parcelable : parcelables) {
             Result result = Parcels.unwrap(parcelable);
             resultList.add(result);
         }
