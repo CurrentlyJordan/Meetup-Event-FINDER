@@ -12,8 +12,8 @@
 
     <ProgressBar
         android:id="@+id/meetup_progress"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/progress_bar_width_height"
+        android:layout_height="@dimen/progress_bar_width_height"
         android:layout_gravity="center" />
 
     <LinearLayout
@@ -33,7 +33,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="No Meetups Found"
-            android:textSize="40dp"
+            android:textSize="@dimen/error_messege_size"
             android:textStyle="bold" />
 
         <TextView
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="18dp" />
+            android:textSize="@dimen/error_messege_detail_size" />
 
 
     </LinearLayout>
@@ -62,7 +62,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/error_finding_meetups_message"
-            android:textSize="40dp"
+            android:textSize="@dimen/error_messege_size"
             android:textStyle="bold" />
 
         <TextView
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="18dp" />
+            android:textSize="@dimen/error_messege_detail_size" />
 
 
     </LinearLayout>

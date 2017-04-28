@@ -89,7 +89,7 @@ public class MeetupListActivity extends AppCompatActivity implements MeetupListC
         if (savedInstanceState == null) {
             meetupListPresenter.fetchMeetupData(userZipCode);
         } else {
-            if (savedInstanceState.getParcelableArray(PARCELABLE_LIST_KEY) == null) {
+            if (savedInstanceState.getParcelableArrayList(PARCELABLE_LIST_KEY) == null) {
                 meetupListPresenter.fetchMeetupData(userZipCode);
             } else {
                 showProgressBar(false);

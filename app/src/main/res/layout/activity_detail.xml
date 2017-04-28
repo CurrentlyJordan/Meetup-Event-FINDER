@@ -14,7 +14,7 @@
         android:id="@+id/meetup_detail_name_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="@dimen/meetup_title_text_detail_size"
         android:layout_gravity="center"
         />
     <TextView
@@ -22,7 +22,7 @@
         android:id="@+id/meetup_detail_venue_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="@dimen/venue_detail_text_size"
         android:gravity="center"
         android:layout_gravity="center"
         />
@@ -31,7 +31,7 @@
         android:id="@+id/meetup_detail_address_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="@dimen/venue_detail_text_size"
         android:gravity="center"
         android:layout_gravity="center"
         />
