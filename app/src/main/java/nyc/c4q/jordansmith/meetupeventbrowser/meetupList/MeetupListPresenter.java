@@ -27,9 +27,9 @@ public class MeetupListPresenter extends BasePresenter<MeetupListContract.View> 
 
     private final static String BASE_URL = "https://api.meetup.com";
     private static final String API_KEY = BuildConfig.API_KEY;
-    List<Result> resultList;
+     private List<Result> resultList;
 
-    public MeetupListPresenter(MeetupListContract.View view) {
+    MeetupListPresenter(MeetupListContract.View view) {
         super(view);
     }
 
