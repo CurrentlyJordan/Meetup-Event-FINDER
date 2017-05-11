@@ -9,7 +9,7 @@ import nyc.c4q.jordansmith.meetupeventbrowser.base.BasePresenter;
 public class MainPresenter extends BasePresenter<MainContract.View> implements MainContract.Presenter {
 
 
-    MainPresenter(MainContract.View view) {
+    public MainPresenter(MainContract.View view) {
         super(view);
     }
 

@@ -24,5 +24,5 @@ public class RetrofitHelper {
                 .build();
         return retrofit.create(service);
     }
-    
+
 }
