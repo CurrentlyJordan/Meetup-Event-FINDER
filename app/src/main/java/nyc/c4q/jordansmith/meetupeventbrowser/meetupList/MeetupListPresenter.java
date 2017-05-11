@@ -1,6 +1,5 @@
 package nyc.c4q.jordansmith.meetupeventbrowser.meetupList;
 
-import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
 
@@ -9,15 +8,19 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import nyc.c4q.jordansmith.meetupeventbrowser.BuildConfig;
 import nyc.c4q.jordansmith.meetupeventbrowser.base.BasePresenter;
+import nyc.c4q.jordansmith.meetupeventbrowser.dagger.DaggerNetComponent;
 import nyc.c4q.jordansmith.meetupeventbrowser.model.MeetupResponse;
 import nyc.c4q.jordansmith.meetupeventbrowser.model.Result;
 import nyc.c4q.jordansmith.meetupeventbrowser.model.Venue;
-import nyc.c4q.jordansmith.meetupeventbrowser.util.RetrofitHelper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 /**
  * Created by jordansmith on 4/26/17.
@@ -25,18 +28,22 @@ import retrofit2.Response;
 
 public class MeetupListPresenter extends BasePresenter<MeetupListContract.View> implements MeetupListContract.Presenter {
 
-    private final static String BASE_URL = "https://api.meetup.com";
     private static final String API_KEY = BuildConfig.API_KEY;
-     private List<Result> resultList;
+    private List<Result> resultList;
+    @Inject
+    @Named("meetup")
+    Retrofit retrofit;
 
     MeetupListPresenter(MeetupListContract.View view) {
         super(view);
+        DaggerNetComponent.builder().build().inject(this);
+
     }
 
 
     @Override
     public void fetchMeetupData(final String zipCode) {
-        MeetupService meetupService = RetrofitHelper.getMeetupResponse(BASE_URL, MeetupService.class);
+        MeetupService meetupService = retrofit.create(MeetupService.class);
         Call<MeetupResponse> meetupResponse = meetupService.getMeetupList("true", "public", zipCode, "group_photo", "20", "0", API_KEY);
         meetupResponse.enqueue(new Callback<MeetupResponse>() {
             @Override

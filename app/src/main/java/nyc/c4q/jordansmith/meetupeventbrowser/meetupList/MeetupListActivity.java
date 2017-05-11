@@ -38,12 +38,14 @@ public class MeetupListActivity extends AppCompatActivity implements MeetupListC
     MeetupAdapter adapter;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meetup_list);
         ButterKnife.bind(this);
         meetupListPresenter = new MeetupListPresenter(this);
+
         userZipCode = getIntent().getStringExtra(LOCATION_ZIP_CODE_KEY);
         checkSaveInstanceState(savedInstanceState);
 

@@ -8,6 +8,7 @@ import java.util.List;
 
 import nyc.c4q.jordansmith.meetupeventbrowser.model.Result;
 import nyc.c4q.jordansmith.meetupeventbrowser.model.Venue;
+import retrofit2.Retrofit;
 
 /**
  * Created by jordansmith on 4/26/17.
